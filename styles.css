@@ -1,0 +1,286 @@
+:root {
+  --color-1: #038c7f;
+  --color-2: #0bbfad;
+  --color-3: #012615;
+  --color-4: #a3bf65;
+  --color-5: #f2b591;
+}
+
+body {
+  font-family: "Quicksand";
+}
+
+.section-1 {
+  background-image: url("./assets/img/background/forestsfantasy.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.home {
+  position: relative;
+  margin-left: 250px;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  /* font-family: "Quicksand"; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
+
+.home i {
+  position: absolute;
+  bottom: 20px;
+  /* Centra el icono horizontalmente */
+  color: var(--color-4);
+  font-size: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bajar-subir 1s ease infinite;
+}
+
+@keyframes bajar-subir {
+  0% {
+    transform: translateY(20px);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+.home div h1 {
+  font-size: 50px;
+}
+
+.home div h1 span {
+  color: var(--color-5);
+}
+
+.hoja {
+  position: absolute;
+  left: 0;
+  z-index: 2000;
+  animation: viento 5s linear infinite;
+}
+
+.hoja img {
+  width: 25px;
+  height: 25px;
+}
+
+@keyframes viento {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);
+  }
+}
+
+.navbar {
+  position: fixed;
+  width: 250px;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  /* font-family: "Quicksand"; */
+  z-index: 1000;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar a img {
+  position: absolute;
+  left: 15%;
+  top: 0;
+  width: 50%;
+  height: 125px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.navbar ul li {
+  margin: 10px 0;
+  display: flex;
+  width: 80%;
+  justify-content: start;
+}
+
+.navbar ul li a {
+  color: var(--color-5);
+  text-decoration: none;
+  text-align: end;
+  position: relative;
+}
+.navbar ul li a::before {
+  color: var(--color-4);
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  content: "\f0c8";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateX(-150%) translateY(-50%) rotate(50deg);
+}
+
+.navbar ul li a.active::before {
+  color: #012615;
+}
+.section-2 {
+  position: relative;
+}
+
+.section-2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 35%;
+  background: url("./assets/img/background/fondo_art.png") no-repeat;
+  background-size: cover;
+  z-index: -5;
+}
+
+.containMain {
+  margin-left: 250px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+  padding: 0 5rem;
+}
+.contenderoParrafo {
+  height: 100%;
+  margin: 25rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.parrafoart {
+  font-size: 18px;
+  font-weight: 500;
+}
+.parrafoart span {
+  color: var(--color-5);
+}
+.imgArt {
+  width: 500px;
+  height: 500px;
+}
+
+.footerContainerContactos {
+  margin-left: 250px;
+  height: 90%;
+}
+
+.contacto {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+  margin: 0 5rem;
+}
+
+.redes p {
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--color-3);
+}
+
+.redes div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.redes div a {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-1);
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+}
+
+.redes div a i {
+  position: relative;
+  color: var(--color-3);
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.redes div a:hover i {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.redes div a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.redes div a:hover:before {
+  top: 0;
+}
+
+.redes div a:nth-child(1)::before {
+  background: #db66cc;
+}
+
+.redes div a:nth-child(2)::before {
+  background: #3b5999;
+}
+
+.redes div a:nth-child(3)::before {
+  background: #000000;
+}
+
+.footer {
+  background: var(--color-3);
+  height: 10%;
+}
+
+.copy {
+  color: #f2b591;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 250px;
+  height: 100%;
+}
+
+.copy span {
+  color: var(--color-4);
+}
